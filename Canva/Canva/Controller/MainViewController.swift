@@ -15,7 +15,8 @@ class MainViewController: UIViewController {
     }
     
     // The view within the FirstViewController
-    @IBOutlet weak var mainScreen: UIView!
+    @IBOutlet weak var mainCanvas: UIView!
+    
     
     // Accepts a UIView as an argument and exports it as a PNG
     func exportImg(_ viewToExport: UIView?) {
@@ -38,9 +39,9 @@ class MainViewController: UIViewController {
         print(imageFilename)
     }
     
-    // Saves an image of the main screen when the "Save Image" button is pressed
+    // Saves an image of the canvas when the "Save Image" button is pressed
     @IBAction func saveImagePress(_ sender: UIButton) {
-        exportImg(mainScreen)
+        exportImg(mainCanvas)
     }
     
     override func didReceiveMemoryWarning() {

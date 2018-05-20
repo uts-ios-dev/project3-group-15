@@ -10,20 +10,52 @@ import UIKit
 
 class menuPane: UIView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    var startCenter: CGPoint?
+    var startTouch: CGPoint?
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
     }
-    */
-
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        startCenter = self.center
+        for touch in touches {
+            startTouch = touch.location(in: self.superview)
+        }
+    }
+    
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for touch in touches {
+            let currentTouch = touch.location(in: self.superview)
+            self.center.x = startCenter!.x + (currentTouch.x - startTouch!.x)
+        }
+    }
 }
 
 class menuPaneLeft: menuPane {
-    // To be written
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesMoved(touches, with: event)
+        if self.center.x > (superview?.frame.minX)!+40 {
+            self.center.x = (superview?.frame.minX)!+40
+        }
+        if self.center.x < (superview?.frame.minX)!-20 {
+            self.center.x = (superview?.frame.minX)!-20
+        }
+    }
 }
 
 class menuPaneRight: menuPane {
-    // To be written
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesMoved(touches, with: event)
+        if self.center.x < (superview?.frame.maxX)!-40 {
+            self.center.x = (superview?.frame.maxX)!-40
+        }
+        if self.center.x > (superview?.frame.maxX)!+20 {
+            self.center.x = (superview?.frame.maxX)!+20
+        }
+    }
 }
