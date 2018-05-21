@@ -13,6 +13,7 @@
 		013C5CDE20A9429A00943E5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 013C5CDC20A9429A00943E5C /* Main.storyboard */; };
 		013C5CE020A9429C00943E5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 013C5CDF20A9429C00943E5C /* Assets.xcassets */; };
 		013C5CE320A9429C00943E5C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 013C5CE120A9429C00943E5C /* LaunchScreen.storyboard */; };
+		01C4D9BE20B28FB80052BF72 /* DesignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C4D9BD20B28FB80052BF72 /* DesignViewController.swift */; };
 		27F0B60D20B2641000F72D41 /* Dragging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F0B60C20B2641000F72D41 /* Dragging.swift */; };
 		B53E8DAE20B2078E00CFC849 /* menuPane.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53E8DAD20B2078E00CFC849 /* menuPane.swift */; };
 		D75B35F9E447645BF2C137B0 /* Pods_Canva.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98FC1169528484CEDA10A289 /* Pods_Canva.framework */; };
@@ -27,9 +28,10 @@
 		013C5CDF20A9429C00943E5C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		013C5CE220A9429C00943E5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		013C5CE420A9429C00943E5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		01C4D9BD20B28FB80052BF72 /* DesignViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignViewController.swift; sourceTree = "<group>"; };
+		27F0B60C20B2641000F72D41 /* Dragging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dragging.swift; sourceTree = "<group>"; };
 		751AC0D0A463D7090E7A51E2 /* Pods-Canva.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Canva.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Canva/Pods-Canva.debug.xcconfig"; sourceTree = "<group>"; };
 		98FC1169528484CEDA10A289 /* Pods_Canva.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Canva.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		27F0B60C20B2641000F72D41 /* Dragging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dragging.swift; sourceTree = "<group>"; };
 		B53E8DAD20B2078E00CFC849 /* menuPane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menuPane.swift; sourceTree = "<group>"; };
 		C34EE47B79ED41B81B7956E9 /* Pods-Canva.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Canva.release.xcconfig"; path = "Pods/Target Support Files/Pods-Canva/Pods-Canva.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -78,6 +80,7 @@
 		013C5CED20A9456300943E5C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				01C4D9BD20B28FB80052BF72 /* DesignViewController.swift */,
 				27F0B60C20B2641000F72D41 /* Dragging.swift */,
 				013C5CD620A9429A00943E5C /* AppDelegate.swift */,
 				013C5CD820A9429A00943E5C /* MainViewController.swift */,
@@ -246,6 +249,7 @@
 				013C5CD720A9429A00943E5C /* AppDelegate.swift in Sources */,
 				B53E8DAE20B2078E00CFC849 /* menuPane.swift in Sources */,
 				013C5CD920A9429A00943E5C /* MainViewController.swift in Sources */,
+				01C4D9BE20B28FB80052BF72 /* DesignViewController.swift in Sources */,
 				27F0B60D20B2641000F72D41 /* Dragging.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
