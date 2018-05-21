@@ -23,7 +23,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Testing" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xcQ-bn-Uv9">
-                                        <rect key="frame" x="160" y="289" width="56" height="21"/>
+                                        <rect key="frame" x="148" y="220" width="56" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -39,6 +39,34 @@
                                             </imageView>
                                         </subviews>
                                     </scrollView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RQ1-5j-r9X">
+                                        <rect key="frame" x="27" y="249" width="87" height="70"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button" image="sticker1"/>
+                                        <connections>
+                                            <action selector="sticker1:" destination="9pv-A4-QxB" eventType="touchUpInside" id="ONY-Ag-gBs"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mCa-le-UDP">
+                                        <rect key="frame" x="27" y="327" width="87" height="76"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button" image="sticker2"/>
+                                        <connections>
+                                            <action selector="sticker2:" destination="9pv-A4-QxB" eventType="touchUpInside" id="XDv-4g-Egm"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RoW-lL-5AI">
+                                        <rect key="frame" x="27" y="411" width="82" height="75"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button" image="sticker3"/>
+                                        <connections>
+                                            <action selector="sticker3:" destination="9pv-A4-QxB" eventType="touchUpInside" id="eri-bN-8RF"/>
+                                        </connections>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="greyBackground" translatesAutoresizingMaskIntoConstraints="NO" id="mKw-2Q-LAf">
+                                        <rect key="frame" x="122" y="249" width="228" height="341"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
@@ -73,6 +101,9 @@
                     <connections>
                         <outlet property="mainCanvas" destination="4CO-Ln-U24" id="Nta-qi-37E"/>
                         <outlet property="scrollView" destination="zwo-zS-4L7" id="VaH-Oq-QeN"/>
+                        <outlet property="sticker1" destination="RQ1-5j-r9X" id="zFd-yx-dde"/>
+                        <outlet property="sticker2" destination="mCa-le-UDP" id="X6H-dr-TgB"/>
+                        <outlet property="sticker3" destination="RoW-lL-5AI" id="baI-1r-piV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
@@ -137,7 +168,11 @@
     </scenes>
     <resources>
         <image name="first" width="30" height="30"/>
+        <image name="greyBackground" width="462" height="1022"/>
         <image name="monster" width="770" height="422"/>
         <image name="second" width="30" height="30"/>
+        <image name="sticker1" width="694" height="618"/>
+        <image name="sticker2" width="772" height="700"/>
+        <image name="sticker3" width="528" height="528"/>
     </resources>
 </document>
