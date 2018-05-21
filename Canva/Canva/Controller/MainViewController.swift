@@ -8,10 +8,34 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, UIScrollViewDelegate {
+    
+    @IBOutlet weak var scrollView: UIScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.scrollView.minimumZoomScale = 1.0
+        self.scrollView.maximumZoomScale = 6.0
+        scrollView.delegate = self
+        
+        let image = UIImage(named: "monster.jpg")
+        imageView.image = image
+        //        imageView.frame = CGRect(origin: CGPoint, size: image!.size)
+        scrollView.addSubview(imageView)
+        scrollView.contentSize = image!.size
+        scrollView.clipsToBounds = false
+        //        scrollView.layer.borderColor = UIColor.yellow.cgColor
+        scrollView.layer.borderWidth = 4.0
+        
+        let scrollViewFrame = scrollView.frame
+        let scaleWidth = scrollViewFrame.size.width / scrollView.contentSize.width
+        let scaleHeight = scrollViewFrame.size.height / scrollView.contentSize.height
+        let minScale = min(scaleWidth, scaleHeight);
+        scrollView.minimumZoomScale = minScale;
+        
+        scrollView.maximumZoomScale = 10.0
+        scrollView.zoomScale = minScale;
+    
     }
     
     // The view within the FirstViewController
@@ -43,9 +67,17 @@ class MainViewController: UIViewController {
     @IBAction func saveImagePress(_ sender: UIButton) {
         exportImg(mainCanvas)
     }
-    
+    let imageView = UIImageView()
+        
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
+    
+    
+    func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
+        return self.imageView
+    }
+    
 }
 

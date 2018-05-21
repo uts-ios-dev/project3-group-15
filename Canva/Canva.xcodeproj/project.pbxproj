@@ -44,7 +44,6 @@
 		013C5CCA20A9429A00943E5C = {
 			isa = PBXGroup;
 			children = (
-				27F0B60C20B2641000F72D41 /* Dragging.swift */,
 				013C5CD520A9429A00943E5C /* Canva */,
 				013C5CD420A9429A00943E5C /* Products */,
 			);
@@ -72,6 +71,7 @@
 		013C5CED20A9456300943E5C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				27F0B60C20B2641000F72D41 /* Dragging.swift */,
 				013C5CD620A9429A00943E5C /* AppDelegate.swift */,
 				013C5CD820A9429A00943E5C /* MainViewController.swift */,
 				013C5CDA20A9429A00943E5C /* DirectoryViewController.swift */,
