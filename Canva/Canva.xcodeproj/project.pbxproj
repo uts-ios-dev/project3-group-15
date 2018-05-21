@@ -14,6 +14,7 @@
 		013C5CE020A9429C00943E5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 013C5CDF20A9429C00943E5C /* Assets.xcassets */; };
 		013C5CE320A9429C00943E5C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 013C5CE120A9429C00943E5C /* LaunchScreen.storyboard */; };
 		27F0B60D20B2641000F72D41 /* Dragging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F0B60C20B2641000F72D41 /* Dragging.swift */; };
+		27F0B68720B2956400F72D41 /* Sticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F0B68620B2956400F72D41 /* Sticker.swift */; };
 		B53E8DAE20B2078E00CFC849 /* menuPane.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53E8DAD20B2078E00CFC849 /* menuPane.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		013C5CE220A9429C00943E5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		013C5CE420A9429C00943E5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27F0B60C20B2641000F72D41 /* Dragging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dragging.swift; sourceTree = "<group>"; };
+		27F0B68620B2956400F72D41 /* Sticker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sticker.swift; sourceTree = "<group>"; };
 		B53E8DAD20B2078E00CFC849 /* menuPane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menuPane.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -72,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				27F0B60C20B2641000F72D41 /* Dragging.swift */,
+				27F0B68620B2956400F72D41 /* Sticker.swift */,
 				013C5CD620A9429A00943E5C /* AppDelegate.swift */,
 				013C5CD820A9429A00943E5C /* MainViewController.swift */,
 				013C5CDA20A9429A00943E5C /* DirectoryViewController.swift */,
@@ -178,6 +181,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				013C5CDB20A9429A00943E5C /* DirectoryViewController.swift in Sources */,
+				27F0B68720B2956400F72D41 /* Sticker.swift in Sources */,
 				013C5CD720A9429A00943E5C /* AppDelegate.swift in Sources */,
 				B53E8DAE20B2078E00CFC849 /* menuPane.swift in Sources */,
 				013C5CD920A9429A00943E5C /* MainViewController.swift in Sources */,
