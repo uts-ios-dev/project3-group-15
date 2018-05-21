@@ -41,8 +41,9 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         return Double(UIScreen.main.bounds.height)
     }
     
-    
+   
     override func viewDidLoad() {
+         //Samaneh Start
         super.viewDidLoad()
         self.scrollView.minimumZoomScale = 1.0
         self.scrollView.maximumZoomScale = 6.0
@@ -67,6 +68,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         scrollView.zoomScale = minScale;
     
     }
+     //Samaneh end
     
     // The view within the FirstViewController
     @IBOutlet weak var mainCanvas: UIView!
@@ -167,10 +169,11 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    
+     //Samaneh Start
     func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
         return self.imageView
     }
+     //Samaneh end
     
 }
 
