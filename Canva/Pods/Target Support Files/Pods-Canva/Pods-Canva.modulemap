@@ -1,0 +1,6 @@
+framework module Pods_Canva {
+  umbrella header "Pods-Canva-umbrella.h"
+
+  export *
+  module * { export * }
+}
