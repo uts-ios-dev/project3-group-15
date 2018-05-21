@@ -10,9 +10,10 @@ import UIKit
 
 class MainViewController: UIViewController, UIScrollViewDelegate {
     
+    
     @IBOutlet weak var scrollView: UIScrollView!
     
-    // MAGGIE START
+    // >>>> MAGGIE START
     @IBOutlet weak var sticker1: UIButton!
     @IBOutlet weak var sticker2: UIButton!
     @IBOutlet weak var sticker3: UIButton!
@@ -32,7 +33,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
      sticker3.center = location
      }
      */
-    // MAGGIE END
+    // >>>> MAGGIE END
     
     public var screenWidth: Double {
         return Double(UIScreen.main.bounds.width)
@@ -43,7 +44,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     
    
     override func viewDidLoad() {
-         //Samaneh Start
+        // >>>> SAMANEH START
         super.viewDidLoad()
         self.scrollView.minimumZoomScale = 1.0
         self.scrollView.maximumZoomScale = 6.0
@@ -68,7 +69,8 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         scrollView.zoomScale = minScale;
     
     }
-     //Samaneh end
+    // >>>> SAMANEH END
+    
     
     // The view within the FirstViewController
     @IBOutlet weak var mainCanvas: UIView!
@@ -101,9 +103,11 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     }
     let imageView = UIImageView()
     
-    // MAGGIE START
+    // >>>> MAGGIE START
     func draggedSticker(selectedSticker: String) {
         let stickerTemplate = UIButton(frame: CGRect(x: (screenWidth * 0.4 + Double(arc4random_uniform(UInt32(screenWidth * 0.4)))), y: (screenWidth * 0.2 + Double(arc4random_uniform(UInt32(screenHeight * 0.7)))), width: 72.0, height: 72.0))
+        
+        stickerTemplate.tag = 1
         
         if selectedSticker == "1" {
             let image = UIImage(named: "sticker1") as UIImage?
@@ -137,7 +141,10 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     
     @objc func editSticker1(_ sender: Any) {
         // (sender as! UIButton).transform = CGAffineTransform(rotationAngle: CGFloat.pi / 2) // rotates 90 degrees to the left
-        (sender as! UIButton).transform = CGAffineTransform(rotationAngle: CGFloat.pi / 3)
+        
+        let btn = (sender as! UIButton)
+        btn.tag = btn.tag + 1
+        btn.transform = CGAffineTransform(rotationAngle:  0.2 * CGFloat(btn.tag))
     }
     
     @objc func editSticker2(_ sender: Any) {
@@ -156,24 +163,18 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
          }
          */
     }
-    
-    /*
-     func viewForZoomingInScrollView(scrollView: UIScrollVIew) -> UIView? {
-     return self.sticker3
-     }
-     */
-    // MAGGIE END
+    // >>>> MAGGIE END
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-     //Samaneh Start
+    // >>>> SAMANEH START
     func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
         return self.imageView
     }
-     //Samaneh end
+    // >>>> SAMANEH END
     
 }
 
