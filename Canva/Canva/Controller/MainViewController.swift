@@ -53,7 +53,6 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     // The view within the FirstViewController
     @IBOutlet weak var mainCanvas: UIView!
     
-    
     // Accepts a UIView as an argument and exports it as a PNG
     func exportImg(_ viewToExport: UIView?) {
         // Image exporting code adapted from from:
@@ -65,6 +64,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         let image = imageRenderer.image { ctx in viewToExport?.drawHierarchy(in: (viewToExport?.bounds)!, afterScreenUpdates: true)}
         
         // Convert UIImage to a PNG data stream; can be changed to JPEG using UIImageJPEGRepresentation(image, 0.9)
+        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
         let imageData = UIImagePNGRepresentation(image)
         
         // Write PNG data stream to file; note that imageFilename can be changed
