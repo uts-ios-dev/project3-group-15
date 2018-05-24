@@ -49,38 +49,6 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     }
     // >>>> SAMANEH END
     
-    
-    // The view within the FirstViewController
-    @IBOutlet weak var mainCanvas: UIView!
-    
-    // Accepts a UIView as an argument and exports it as a PNG
-    func exportImg(_ viewToExport: UIView?) {
-        // Image exporting code adapted from from:
-        // 1. https://www.hackingwithswift.com/example-code/media/how-to-render-a-uiview-to-a-uiimage
-        // 2. https://www.hackingwithswift.com/example-code/media/how-to-save-a-uiimage-to-a-file-using-uiimagepngrepresentation
-        
-        // Convert UIView to UIImage
-        let imageRenderer = UIGraphicsImageRenderer(size: (viewToExport?.bounds.size)!)
-        let image = imageRenderer.image { ctx in viewToExport?.drawHierarchy(in: (viewToExport?.bounds)!, afterScreenUpdates: true)}
-        
-        // Convert UIImage to a PNG data stream; can be changed to JPEG using UIImageJPEGRepresentation(image, 0.9)
-        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
-        let imageData = UIImagePNGRepresentation(image)
-        
-        // Write PNG data stream to file; note that imageFilename can be changed
-        let imageFilename = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("copy.png")
-        try? imageData?.write(to: imageFilename)
-        
-        // Reports in console where the image is saved to
-        print(imageFilename)
-    }
-    
-    // Saves an image of the canvas when the "Save Image" button is pressed
-    @IBAction func saveImagePress(_ sender: UIButton) {
-        exportImg(mainCanvas)
-    }
-    let imageView = UIImageView()
-    
     // >>>> MAGGIE START
     func draggedSticker(selectedSticker: String) {
         let stickerTemplate = UIButton(frame: CGRect(x: (screenWidth * 0.4 + Double(arc4random_uniform(UInt32(screenWidth * 0.4)))), y: (screenWidth * 0.2 + Double(arc4random_uniform(UInt32(screenHeight * 0.7)))), width: 72.0, height: 72.0))
