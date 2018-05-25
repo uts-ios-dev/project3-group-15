@@ -16,8 +16,10 @@
 		01C4D9BE20B28FB80052BF72 /* DesignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C4D9BD20B28FB80052BF72 /* DesignViewController.swift */; };
 		01C4D9C020B2930F0052BF72 /* Sticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C4D9BF20B2930F0052BF72 /* Sticker.swift */; };
 		27F0B60D20B2641000F72D41 /* Dragging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F0B60C20B2641000F72D41 /* Dragging.swift */; };
+		27F0B68720B2956400F72D41 /* Sticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F0B68620B2956400F72D41 /* Sticker.swift */; };
 		B53E8DAE20B2078E00CFC849 /* menuPane.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53E8DAD20B2078E00CFC849 /* menuPane.swift */; };
 		D75B35F9E447645BF2C137B0 /* Pods_Canva.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98FC1169528484CEDA10A289 /* Pods_Canva.framework */; };
+		B5D1F8D720B77DD400FC5AEE /* ImageExport.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D1F8D620B77DD400FC5AEE /* ImageExport.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,9 @@
 		98FC1169528484CEDA10A289 /* Pods_Canva.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Canva.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B53E8DAD20B2078E00CFC849 /* menuPane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menuPane.swift; sourceTree = "<group>"; };
 		C34EE47B79ED41B81B7956E9 /* Pods-Canva.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Canva.release.xcconfig"; path = "Pods/Target Support Files/Pods-Canva/Pods-Canva.release.xcconfig"; sourceTree = "<group>"; };
+		27F0B68620B2956400F72D41 /* Sticker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sticker.swift; sourceTree = "<group>"; };
+		B53E8DAD20B2078E00CFC849 /* menuPane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menuPane.swift; sourceTree = "<group>"; };
+		B5D1F8D620B77DD400FC5AEE /* ImageExport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExport.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,10 +89,12 @@
 			children = (
 				01C4D9BD20B28FB80052BF72 /* DesignViewController.swift */,
 				27F0B60C20B2641000F72D41 /* Dragging.swift */,
+				27F0B68620B2956400F72D41 /* Sticker.swift */,
 				013C5CD620A9429A00943E5C /* AppDelegate.swift */,
 				013C5CD820A9429A00943E5C /* MainViewController.swift */,
 				013C5CDA20A9429A00943E5C /* DirectoryViewController.swift */,
 				B53E8DAD20B2078E00CFC849 /* menuPane.swift */,
+				B5D1F8D620B77DD400FC5AEE /* ImageExport.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -249,6 +256,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				013C5CDB20A9429A00943E5C /* DirectoryViewController.swift in Sources */,
+				B5D1F8D720B77DD400FC5AEE /* ImageExport.swift in Sources */,
+				27F0B68720B2956400F72D41 /* Sticker.swift in Sources */,
 				013C5CD720A9429A00943E5C /* AppDelegate.swift in Sources */,
 				B53E8DAE20B2078E00CFC849 /* menuPane.swift in Sources */,
 				013C5CD920A9429A00943E5C /* MainViewController.swift in Sources */,
