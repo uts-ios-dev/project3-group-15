@@ -107,13 +107,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gallery" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pIp-y0-ApU">
-                                <rect key="frame" x="23" y="707" width="39" height="15"/>
+                                <rect key="frame" x="14" y="707" width="39" height="15"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="11"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Save" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e9j-uS-UIH">
+                                <rect key="frame" x="330" y="706" width="25" height="15"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="11"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Take Photo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LgW-lM-qbr">
+                                <rect key="frame" x="160" y="705" width="55" height="15"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="11"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NeO-lY-1eU">
-                                <rect key="frame" x="16" y="664" width="51" height="50"/>
+                                <rect key="frame" x="7" y="664" width="51" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="A2h-QW-8mM"/>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="51" id="A3M-A8-jAc"/>
@@ -123,22 +135,75 @@
                                     <segue destination="xa0-Qd-MX2" kind="presentation" identifier="segueDesignToSideMenu" id="S5z-P2-Sih"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IFr-PY-Ip1">
+                                <rect key="frame" x="323" y="670" width="39" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="39" id="3kg-mD-HaM"/>
+                                    <constraint firstAttribute="height" constant="38" id="vp1-Xn-tZY"/>
+                                </constraints>
+                                <state key="normal" title="Save" image="save"/>
+                                <connections>
+                                    <action selector="buttonSaveToAlbumTouchDown:" destination="IvI-Nb-uqx" eventType="touchDown" id="wSG-LK-JXa"/>
+                                    <action selector="buttonSaveToAlbumTouchUp:" destination="IvI-Nb-uqx" eventType="touchUpInside" id="U5O-VH-1d7"/>
+                                </connections>
+                            </button>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Yk-1j-ern">
+                                <rect key="frame" x="7" y="49" width="361" height="607"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dqo-HH-LSY">
+                                        <rect key="frame" x="0.0" y="0.0" width="361" height="607"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.93333333333333335" green="0.96470588235294119" blue="0.99215686274509807" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yD3-Sj-iza">
+                                <rect key="frame" x="168" y="669" width="39" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="0VN-el-y9A"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="39" id="44b-T3-VUa"/>
+                                </constraints>
+                                <state key="normal" title="Save" image="camera"/>
+                                <connections>
+                                    <action selector="buttonSaveToAlbumTouchDown:" destination="IvI-Nb-uqx" eventType="touchDown" id="tqJ-yn-Wgh"/>
+                                    <action selector="buttonSaveToAlbumTouchUp:" destination="IvI-Nb-uqx" eventType="touchUpInside" id="46r-co-prQ"/>
+                                    <action selector="buttonTakePhotoTapped:" destination="IvI-Nb-uqx" eventType="touchDown" id="ngj-AI-cn4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Cxw-b3-prP" firstAttribute="trailing" secondItem="IFr-PY-Ip1" secondAttribute="trailing" constant="13" id="0rV-MV-qMJ"/>
+                            <constraint firstItem="LgW-lM-qbr" firstAttribute="bottom" secondItem="yD3-Sj-iza" secondAttribute="bottom" constant="13" id="2W5-Hd-a2C"/>
+                            <constraint firstItem="Cxw-b3-prP" firstAttribute="bottom" secondItem="IFr-PY-Ip1" secondAttribute="bottom" constant="21" id="6We-e2-EUi"/>
+                            <constraint firstItem="Cxw-b3-prP" firstAttribute="bottom" secondItem="yD3-Sj-iza" secondAttribute="bottom" constant="22" id="FiC-dg-bzk"/>
                             <constraint firstItem="NeO-lY-1eU" firstAttribute="bottom" secondItem="Cxw-b3-prP" secondAttribute="bottom" constant="-15" id="Lcc-sd-O4a"/>
+                            <constraint firstItem="yD3-Sj-iza" firstAttribute="centerX" secondItem="2pt-Vw-qBI" secondAttribute="centerX" id="Qcl-m8-qn4"/>
+                            <constraint firstItem="e9j-uS-UIH" firstAttribute="centerX" secondItem="IFr-PY-Ip1" secondAttribute="centerX" id="RMw-Ba-FAf"/>
+                            <constraint firstItem="e9j-uS-UIH" firstAttribute="bottom" secondItem="IFr-PY-Ip1" secondAttribute="bottom" constant="13" id="RfY-Zu-hHs"/>
+                            <constraint firstItem="LgW-lM-qbr" firstAttribute="centerX" secondItem="yD3-Sj-iza" secondAttribute="centerX" id="Vt7-Bw-rrV"/>
                             <constraint firstItem="pIp-y0-ApU" firstAttribute="centerX" secondItem="NeO-lY-1eU" secondAttribute="centerX" constant="1" id="Zfp-aQ-EX2"/>
-                            <constraint firstItem="NeO-lY-1eU" firstAttribute="leading" secondItem="Cxw-b3-prP" secondAttribute="leading" constant="16" id="flv-6s-lPK"/>
+                            <constraint firstItem="NeO-lY-1eU" firstAttribute="leading" secondItem="Cxw-b3-prP" secondAttribute="leading" constant="7" id="flv-6s-lPK"/>
                             <constraint firstItem="pIp-y0-ApU" firstAttribute="bottom" secondItem="NeO-lY-1eU" secondAttribute="bottom" constant="8" id="sI1-R9-MjX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Cxw-b3-prP"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Design" image="icon-design" selectedImage="icon-design" id="RYp-ts-gce"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="canvaBackground" destination="Dqo-HH-LSY" id="wZr-vt-eFI"/>
+                        <outlet property="canvaView" destination="3Yk-1j-ern" id="LqS-00-GLB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UqR-xE-l3f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1022" y="-483"/>
+            <point key="canvasLocation" x="1021.6" y="-483.25123152709364"/>
         </scene>
         <!--Side Menu Navigation Controller-->
         <scene sceneID="PMc-Jb-NNR">
@@ -166,9 +231,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="camera" width="128" height="128"/>
         <image name="icon-design" width="25" height="25"/>
         <image name="icon-directory" width="25" height="25"/>
         <image name="icon-gallery" width="80" height="80"/>
+        <image name="save" width="128" height="128"/>
         <image name="sketch" width="512" height="512"/>
     </resources>
 </document>

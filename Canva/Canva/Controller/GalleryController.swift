@@ -10,7 +10,14 @@ import UIKit
 
 private let reuseIdentifier = "GalleryCell"
 
+protocol GalleryControllerDelegate {
+    func updateVisibleStickers(sticker: Sticker)
+}
+
 class GalleryController: UICollectionViewController {
+    
+    var delegate: GalleryControllerDelegate?
+    
     var images = [UIImage]()
     
     override func viewDidLoad() {
@@ -19,14 +26,10 @@ class GalleryController: UICollectionViewController {
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         
-        // Register cell classes
-        // self.collectionView!.register(GalleryCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-        
         // Do any additional setup after loading the view.
-        let imageFileNames = Helper.getImageFileNamesFromBundle(bundle: Constants.galleryBundleName)
-        if (imageFileNames.count > 0) {
-            for filename in imageFileNames {
-                self.images.append(UIImage(named: "\(Constants.galleryBundleName)/\(filename)")!)
+        if (Global.Constants.galleryImageFileNames.count > 0) {
+            for filename in Global.Constants.galleryImageFileNames {
+                self.images.append(UIImage(named: "\(Global.Constants.galleryBundleName)/\(filename)")!)
             }
         }
     }
@@ -74,9 +77,9 @@ class GalleryController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // handle tap events
-        print("You selected cell #\(indexPath.item)!")
-//        self.performSegue(withIdentifier: "unwindToDesignScreen", sender: self.navigationController)
+        print("Selected cell index: \(indexPath.item)")
         
+        delegate?.updateVisibleStickers(sticker: Sticker(image: self.images[indexPath.item]))
     }
     
     /*

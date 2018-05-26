@@ -9,27 +9,25 @@
 /* Begin PBXBuildFile section */
 		0100217320B7F5EB0082B127 /* GalleryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0100217220B7F5EB0082B127 /* GalleryController.swift */; };
 		0100217520B7F7740082B127 /* GalleryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0100217420B7F7740082B127 /* GalleryCell.swift */; };
-		0100219920B824DF0082B127 /* gallery.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0100219820B824DF0082B127 /* gallery.bundle */; };
 		0100219B20B828500082B127 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0100219A20B8284F0082B127 /* Helper.swift */; };
+		0138845C20B9889D00F2F633 /* gallery.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0138845B20B9889D00F2F633 /* gallery.bundle */; };
 		013C5CD720A9429A00943E5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013C5CD620A9429A00943E5C /* AppDelegate.swift */; };
 		013C5CD920A9429A00943E5C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013C5CD820A9429A00943E5C /* MainViewController.swift */; };
 		013C5CDB20A9429A00943E5C /* DirectoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013C5CDA20A9429A00943E5C /* DirectoryViewController.swift */; };
 		013C5CDE20A9429A00943E5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 013C5CDC20A9429A00943E5C /* Main.storyboard */; };
 		013C5CE020A9429C00943E5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 013C5CDF20A9429C00943E5C /* Assets.xcassets */; };
 		013C5CE320A9429C00943E5C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 013C5CE120A9429C00943E5C /* LaunchScreen.storyboard */; };
-		018EA03F20B8395400EF00DB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018EA03E20B8395400EF00DB /* Constants.swift */; };
+		018EA03F20B8395400EF00DB /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018EA03E20B8395400EF00DB /* Global.swift */; };
 		01C4D9BE20B28FB80052BF72 /* DesignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C4D9BD20B28FB80052BF72 /* DesignViewController.swift */; };
 		01C4D9C020B2930F0052BF72 /* Sticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C4D9BF20B2930F0052BF72 /* Sticker.swift */; };
-		27F0B68720B2956400F72D41 /* StickerTemp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F0B68620B2956400F72D41 /* StickerTemp.swift */; };
-		B5D1F8D720B77DD400FC5AEE /* ImageExport.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D1F8D620B77DD400FC5AEE /* ImageExport.swift */; };
 		D75B35F9E447645BF2C137B0 /* Pods_Canva.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98FC1169528484CEDA10A289 /* Pods_Canva.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0100217220B7F5EB0082B127 /* GalleryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryController.swift; sourceTree = "<group>"; };
 		0100217420B7F7740082B127 /* GalleryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCell.swift; sourceTree = "<group>"; };
-		0100219820B824DF0082B127 /* gallery.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = gallery.bundle; path = "../../../../../../../Downloads/901535-travel/gallery.bundle"; sourceTree = "<group>"; };
 		0100219A20B8284F0082B127 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		0138845B20B9889D00F2F633 /* gallery.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = gallery.bundle; sourceTree = "<group>"; };
 		013C5CD320A9429A00943E5C /* Canva.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Canva.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		013C5CD620A9429A00943E5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		013C5CD820A9429A00943E5C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -38,13 +36,11 @@
 		013C5CDF20A9429C00943E5C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		013C5CE220A9429C00943E5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		013C5CE420A9429C00943E5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		018EA03E20B8395400EF00DB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		018EA03E20B8395400EF00DB /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		01C4D9BD20B28FB80052BF72 /* DesignViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignViewController.swift; sourceTree = "<group>"; };
 		01C4D9BF20B2930F0052BF72 /* Sticker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sticker.swift; sourceTree = "<group>"; };
-		27F0B68620B2956400F72D41 /* StickerTemp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerTemp.swift; sourceTree = "<group>"; };
 		751AC0D0A463D7090E7A51E2 /* Pods-Canva.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Canva.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Canva/Pods-Canva.debug.xcconfig"; sourceTree = "<group>"; };
 		98FC1169528484CEDA10A289 /* Pods_Canva.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Canva.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B5D1F8D620B77DD400FC5AEE /* ImageExport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExport.swift; sourceTree = "<group>"; };
 		C34EE47B79ED41B81B7956E9 /* Pods-Canva.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Canva.release.xcconfig"; path = "Pods/Target Support Files/Pods-Canva/Pods-Canva.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -92,6 +88,7 @@
 		013C5CED20A9456300943E5C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				013C5CD620A9429A00943E5C /* AppDelegate.swift */,
 				01C4D9BD20B28FB80052BF72 /* DesignViewController.swift */,
 				013C5CD820A9429A00943E5C /* MainViewController.swift */,
 				0100217220B7F5EB0082B127 /* GalleryController.swift */,
@@ -114,12 +111,10 @@
 		013C5CEF20A945DC00943E5C /* Includes */ = {
 			isa = PBXGroup;
 			children = (
-				018EA03E20B8395400EF00DB /* Constants.swift */,
-				B5D1F8D620B77DD400FC5AEE /* ImageExport.swift */,
+				018EA03E20B8395400EF00DB /* Global.swift */,
 				0100219A20B8284F0082B127 /* Helper.swift */,
-				013C5CD620A9429A00943E5C /* AppDelegate.swift */,
 				013C5CE420A9429C00943E5C /* Info.plist */,
-				0100219820B824DF0082B127 /* gallery.bundle */,
+				0138845B20B9889D00F2F633 /* gallery.bundle */,
 			);
 			path = Includes;
 			sourceTree = "<group>";
@@ -127,7 +122,6 @@
 		013C5CF020A945EB00943E5C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				27F0B68620B2956400F72D41 /* StickerTemp.swift */,
 				01C4D9BF20B2930F0052BF72 /* Sticker.swift */,
 			);
 			path = Model;
@@ -213,7 +207,7 @@
 			files = (
 				013C5CE320A9429C00943E5C /* LaunchScreen.storyboard in Resources */,
 				013C5CE020A9429C00943E5C /* Assets.xcassets in Resources */,
-				0100219920B824DF0082B127 /* gallery.bundle in Resources */,
+				0138845C20B9889D00F2F633 /* gallery.bundle in Resources */,
 				013C5CDE20A9429A00943E5C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -265,10 +259,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				013C5CDB20A9429A00943E5C /* DirectoryViewController.swift in Sources */,
-				B5D1F8D720B77DD400FC5AEE /* ImageExport.swift in Sources */,
 				0100217520B7F7740082B127 /* GalleryCell.swift in Sources */,
-				018EA03F20B8395400EF00DB /* Constants.swift in Sources */,
-				27F0B68720B2956400F72D41 /* StickerTemp.swift in Sources */,
+				018EA03F20B8395400EF00DB /* Global.swift in Sources */,
 				013C5CD720A9429A00943E5C /* AppDelegate.swift in Sources */,
 				0100217320B7F5EB0082B127 /* GalleryController.swift in Sources */,
 				013C5CD920A9429A00943E5C /* MainViewController.swift in Sources */,
