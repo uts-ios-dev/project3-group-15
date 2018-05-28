@@ -21,6 +21,8 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     /*
      var location = CGPoint(x: 0, y: 0)
      
+     
+     
      override func touchesBegan(_ touches: Set<UITouch>!, with event: UIEvent!) {
      let touch : UITouch! = touches.anyObject() as UITouch // or touches.first // Try this
      location = touch.location(in: self.view)
