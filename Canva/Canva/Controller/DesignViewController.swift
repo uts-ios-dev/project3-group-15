@@ -32,7 +32,7 @@ class DesignViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
     
     // Orientation: https://stackoverflow.com/questions/28938660/how-to-lock-orientation-of-one-view-controller-to-portrait-mode-only-in-swift
-    override func viewDidAppear(_ animated: Bool) {
+    /* override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         AppUtility.lockOrientation(.portrait)
@@ -44,7 +44,7 @@ class DesignViewController: UIViewController, UIImagePickerControllerDelegate, U
         
         // Don't forget to reset when view is being removed
         AppUtility.lockOrientation(.all)
-    }
+    } */
     override open var shouldAutorotate: Bool { // Extra
         return false
     }
