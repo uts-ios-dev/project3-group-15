@@ -10,7 +10,7 @@ import UIKit
 import SideMenu
 
 class DesignViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, GalleryControllerDelegate, StickerDelegate {
- 
+    
     
     
     @IBOutlet weak var canvaView: UIView!
@@ -19,10 +19,10 @@ class DesignViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     var stickers = [Sticker]()
     var generator = UINotificationFeedbackGenerator()
-    var selectedtoDeleteSticker = 0
+    var selectedStickerToDelete = ""
     
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -44,16 +44,18 @@ class DesignViewController: UIViewController, UIImagePickerControllerDelegate, U
         //        button.backgroundColor = .red
         //        button.setTitle("Delete Button", for: .normal)
         //        self.addSubview((button)!)
-//        let button2 = UIButton(frame: CGRect(x: 100, y: 100, width: 100, height: 50))
-//        button2.backgroundColor = .red
-//        button2.setTitle("Test Button", for: .normal)
-//        button2.tag = 23
-//        self.view.addSubview(button2)
+        //        let button2 = UIButton(frame: CGRect(x: 100, y: 100, width: 100, height: 50))
+        //        button2.backgroundColor = .red
+        //        button2.setTitle("Test Button", for: .normal)
+        //        button2.tag = 23
+        //        self.view.addSubview(button2)
     }
     
     // SAMANEH
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        print("super view touchesBegan", selectedStickerToDelete)
         if let viewWithTag = self.view.viewWithTag(23) {
+            deleteSticker()
             viewWithTag.removeFromSuperview()
         }
     }
@@ -74,26 +76,26 @@ class DesignViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     func updateVisibleStickers(sticker: Sticker) {
         stickers.append(sticker)
-        
+        sticker.delegate = self
         for sticker in stickers {
             if (!sticker.loadedIntoView) {
                 self.canvaView.addSubview(sticker)
-                
                 sticker.loadedIntoView = true
             }
         }
     }
     
-    func selectedSticker(index: Int) {
-        selectedtoDeleteSticker = index
+    func selectedSticker(id: String) {
+        selectedStickerToDelete = id
     }
     
     func deleteSticker() {
-        print("here")
-        let sticker = stickers[selectedtoDeleteSticker]
-        sticker.removeFromSuperview()
+        for sticker in stickers {
+            if sticker.id == selectedStickerToDelete {
+                sticker.removeFromSuperview()
+            }
+        }
     }
-    
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         canvaBackground.image = info[UIImagePickerControllerOriginalImage] as? UIImage

@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 protocol StickerDelegate {
-    func selectedSticker(index: Int)
+    func selectedSticker(id: String)
     func deleteSticker()
 }
 
@@ -20,7 +20,7 @@ class Sticker: UIImageView, UIGestureRecognizerDelegate {
     var startCenter: CGPoint?
     var startTouch: CGPoint?
     var delegate: StickerDelegate?
-
+    
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -51,36 +51,25 @@ class Sticker: UIImageView, UIGestureRecognizerDelegate {
         }
         for touch in touches {
             startTouch = touch.location(in: self.superview)
-            //            let button = UIButton(frame: CGRect(x: 100, y: 100, width: 100, height: 50))
-            //            self.buttonAction(sender: button!)
-            //            button?.backgroundColor = .red
-            //            button?.setTitle("Delete Button", for: .normal)
-            //            button?.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
-            //            button?.isHidden = true
-            //            self.addSubview((button)!)
-            //            self.init(button: button)
-            //            button.isHidden = false
-            //
-            
-            
         }
-        print(self.tag)
+
         let button2 = UIButton(frame: CGRect(x: 100, y: 100, width: 100, height: 50))
         button2.backgroundColor = .red
-        button2.setTitle("Test Button", for: .normal)
+        button2.setTitle("Delete", for: .normal)
         button2.tag = 23
-//        button2.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+        //        button2.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
         button2.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
-
-        self.superview?.addSubview(button2)
-        delegate?.selectedSticker(index: 1)
-
+        
+        //        self.superview?.addSubview(button2)
+        self.addSubview(button2)
+        delegate?.selectedSticker(id: self.id)
+        
     }
     @objc func buttonAction(sender: UIButton!) {
         print("Button tapped")
-
+        
         delegate?.deleteSticker()
-
+        
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
