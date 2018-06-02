@@ -20,6 +20,7 @@
 		018EA03F20B8395400EF00DB /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018EA03E20B8395400EF00DB /* Global.swift */; };
 		01C4D9BE20B28FB80052BF72 /* DesignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C4D9BD20B28FB80052BF72 /* DesignViewController.swift */; };
 		01C4D9C020B2930F0052BF72 /* Sticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C4D9BF20B2930F0052BF72 /* Sticker.swift */; };
+		275A414E20C2B30E0000E491 /* DeleteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275A414D20C2B30E0000E491 /* DeleteButton.swift */; };
 		D75B35F9E447645BF2C137B0 /* Pods_Canva.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98FC1169528484CEDA10A289 /* Pods_Canva.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		018EA03E20B8395400EF00DB /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		01C4D9BD20B28FB80052BF72 /* DesignViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignViewController.swift; sourceTree = "<group>"; };
 		01C4D9BF20B2930F0052BF72 /* Sticker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sticker.swift; sourceTree = "<group>"; };
+		275A414D20C2B30E0000E491 /* DeleteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteButton.swift; sourceTree = "<group>"; };
 		751AC0D0A463D7090E7A51E2 /* Pods-Canva.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Canva.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Canva/Pods-Canva.debug.xcconfig"; sourceTree = "<group>"; };
 		98FC1169528484CEDA10A289 /* Pods_Canva.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Canva.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C34EE47B79ED41B81B7956E9 /* Pods-Canva.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Canva.release.xcconfig"; path = "Pods/Target Support Files/Pods-Canva/Pods-Canva.release.xcconfig"; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				01C4D9BF20B2930F0052BF72 /* Sticker.swift */,
+				275A414D20C2B30E0000E491 /* DeleteButton.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 				0100217520B7F7740082B127 /* GalleryCell.swift in Sources */,
 				018EA03F20B8395400EF00DB /* Global.swift in Sources */,
 				013C5CD720A9429A00943E5C /* AppDelegate.swift in Sources */,
+				275A414E20C2B30E0000E491 /* DeleteButton.swift in Sources */,
 				0100217320B7F5EB0082B127 /* GalleryController.swift in Sources */,
 				013C5CD920A9429A00943E5C /* MainViewController.swift in Sources */,
 				01C4D9BE20B28FB80052BF72 /* DesignViewController.swift in Sources */,

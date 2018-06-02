@@ -9,9 +9,8 @@
 import UIKit
 import SideMenu
 
+
 class DesignViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, GalleryControllerDelegate, StickerDelegate {
-    
-    
     
     @IBOutlet weak var canvaView: UIView!
     @IBOutlet weak var buttonSaveToAlbum: UIButton!
@@ -22,9 +21,21 @@ class DesignViewController: UIViewController, UIImagePickerControllerDelegate, U
     var selectedStickerToDelete = ""
     
     
+    private lazy var sticker: Sticker = {
+        var filename = "003-tree.png"
+        let iv = Sticker(image: UIImage(named: "\(Global.Constants.galleryBundleName)/\(filename)"))
+        
+        iv.delegate = self
+        return iv
+    }()
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        self.view.addSubview(sticker)
+        
         // Do any additional setup after loading the view, typically from a nib.
         let button = UIButton(frame: CGRect(x: 100, y: 100, width: 100, height: 50))
         button.backgroundColor = .red
@@ -53,9 +64,9 @@ class DesignViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     // SAMANEH
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        print("super view touchesBegan", selectedStickerToDelete)
+        //        print("super view touchesBegan", selectedStickerToDelete)
+        //
         if let viewWithTag = self.view.viewWithTag(23) {
-            deleteSticker()
             viewWithTag.removeFromSuperview()
         }
     }
@@ -77,6 +88,7 @@ class DesignViewController: UIViewController, UIImagePickerControllerDelegate, U
     func updateVisibleStickers(sticker: Sticker) {
         stickers.append(sticker)
         sticker.delegate = self
+        //        sticker.isUserInteractionEnabled = true
         for sticker in stickers {
             if (!sticker.loadedIntoView) {
                 self.canvaView.addSubview(sticker)
@@ -84,6 +96,11 @@ class DesignViewController: UIViewController, UIImagePickerControllerDelegate, U
             }
         }
     }
+    
+    //    func buttonTapped(button: UIButton) {
+    //        print("buttonTapped called")
+    //    }
+    
     
     func selectedSticker(id: String) {
         selectedStickerToDelete = id
@@ -94,6 +111,9 @@ class DesignViewController: UIViewController, UIImagePickerControllerDelegate, U
             if sticker.id == selectedStickerToDelete {
                 sticker.removeFromSuperview()
             }
+        }
+        if let viewWithTag = self.view.viewWithTag(23) {
+            viewWithTag.removeFromSuperview()
         }
     }
     
