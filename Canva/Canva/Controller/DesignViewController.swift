@@ -50,9 +50,7 @@ class DesignViewController: UIViewController, UIImagePickerControllerDelegate, U
         //
         if let viewWithTag = self.view.viewWithTag(23) {
             viewWithTag.removeFromSuperview()
-            for sticker in stickers {
-                sticker.stopShake()
-            }
+            stopShakeAll()
             sticker.stopShake()
         }
     }
@@ -83,6 +81,11 @@ class DesignViewController: UIViewController, UIImagePickerControllerDelegate, U
         }
     }
     
+    func stopShakeAll() {
+        for sticker in stickers {
+            sticker.stopShake()
+        }
+    }
     func selectedSticker(id: String) {
         selectedStickerToDelete = id
     }

@@ -11,6 +11,8 @@ import UIKit
 protocol StickerDelegate {
     func selectedSticker(id: String)
     func deleteSticker()
+    func stopShakeAll()
+    
 //    func buttonTapped(button: UIButton)
 }
 
@@ -134,6 +136,8 @@ class Sticker: UIImageView, UIGestureRecognizerDelegate {
         startCenter = self.center
         if let viewWithTag = self.superview?.viewWithTag(23) {
             viewWithTag.removeFromSuperview()
+            delegate?.stopShakeAll()
+//            self.stopShake()
         }
         for touch in touches {
             startTouch = touch.location(in: self.superview)
@@ -143,13 +147,13 @@ class Sticker: UIImageView, UIGestureRecognizerDelegate {
             //            }
         }
         //        let button2 = UIButton(frame: CGRect(x: startCenter!.x + 100, y: startCenter!.y + 100, width: 100, height: 50))
-        button2 = UIButton(frame: CGRect(x: startCenter!.x + 50 , y: startCenter!.y + 50, width: 30, height: 30))
+        button2 = UIButton(frame: CGRect(x: startCenter!.x + 20 , y: startCenter!.y + 20, width: 25, height: 25))
         self.applyRoundCorner(button2!)
         self.shake()
         
         //        button2 = UIButton(frame: CGRect(x: 0, y: 300, width: 100, height: 50))
         //        let button2 = DeleteButton(frame: CGRect(x: 100, y: 100, width: 100, height: 50))
-        button2?.backgroundColor = .red
+        button2?.backgroundColor = UIColor.gray
         button2?.setTitle("X", for: .normal)
         button2?.tag = 23
         //        button2.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
