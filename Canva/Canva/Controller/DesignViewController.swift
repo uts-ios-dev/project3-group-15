@@ -9,7 +9,6 @@
 import UIKit
 import SideMenu
 
-
 class DesignViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, GalleryControllerDelegate, StickerDelegate {
     
     @IBOutlet weak var canvaView: UIView!
@@ -19,7 +18,6 @@ class DesignViewController: UIViewController, UIImagePickerControllerDelegate, U
     var stickers = [Sticker]()
     var generator = UINotificationFeedbackGenerator()
     var selectedStickerToDelete = ""
-    
     
     private lazy var sticker: Sticker = {
         var filename = "003-tree.png"
@@ -34,15 +32,9 @@ class DesignViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.view.addSubview(sticker)
-        
+        //        self.view.addSubview(sticker)
         // Do any additional setup after loading the view, typically from a nib.
-        let button = UIButton(frame: CGRect(x: 100, y: 100, width: 100, height: 50))
-        button.backgroundColor = .red
-        button.setTitle("Delete Button", for: .normal)
-        button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
-        button.isHidden = true
-        self.view.addSubview(button)
+        
         let edgePan = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(screenEdgeSwiped))
         edgePan.edges = .left
         view.addGestureRecognizer(edgePan)
@@ -50,27 +42,21 @@ class DesignViewController: UIViewController, UIImagePickerControllerDelegate, U
         Helper.preloadGallery()
         
         canvaView.backgroundColor = Global.Constants.canvaBackgroundColor
-        
-        //        let button = UIButton(frame: CGRect(x: 100, y: 100, width: 100, height: 50))
-        //        button.backgroundColor = .red
-        //        button.setTitle("Delete Button", for: .normal)
-        //        self.addSubview((button)!)
-        //        let button2 = UIButton(frame: CGRect(x: 100, y: 100, width: 100, height: 50))
-        //        button2.backgroundColor = .red
-        //        button2.setTitle("Test Button", for: .normal)
-        //        button2.tag = 23
-        //        self.view.addSubview(button2)
     }
     
-    // SAMANEH
+    // SAMANEH START
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         //        print("super view touchesBegan", selectedStickerToDelete)
         //
         if let viewWithTag = self.view.viewWithTag(23) {
             viewWithTag.removeFromSuperview()
+            for sticker in stickers {
+                sticker.stopShake()
+            }
+            sticker.stopShake()
         }
     }
-    
+    // SAMANEH END
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -97,11 +83,6 @@ class DesignViewController: UIViewController, UIImagePickerControllerDelegate, U
         }
     }
     
-    //    func buttonTapped(button: UIButton) {
-    //        print("buttonTapped called")
-    //    }
-    
-    
     func selectedSticker(id: String) {
         selectedStickerToDelete = id
     }
@@ -126,6 +107,7 @@ class DesignViewController: UIViewController, UIImagePickerControllerDelegate, U
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let nav = segue.destination as? UISideMenuNavigationController, let galleryController = nav.topViewController as? GalleryController {
             galleryController.delegate = self
+            //            stick.delegate = self
         }
     }
     
@@ -171,6 +153,7 @@ class DesignViewController: UIViewController, UIImagePickerControllerDelegate, U
             present(alert, animated: true)
         }
     }
+    // SAMANEH
     @objc func buttonAction(sender: UIButton!) {
         print("Button tapped")
     }
@@ -178,5 +161,6 @@ class DesignViewController: UIViewController, UIImagePickerControllerDelegate, U
     func showSubviewButtonTapped(sender: AnyObject) {
         
     }
+    
 }
 

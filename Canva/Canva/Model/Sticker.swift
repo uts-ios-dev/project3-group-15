@@ -15,6 +15,7 @@ protocol StickerDelegate {
 }
 
 class Sticker: UIImageView, UIGestureRecognizerDelegate {
+    
     // Properties
     let id: String = UUID().uuidString
     var loadedIntoView: Bool = false
@@ -22,6 +23,8 @@ class Sticker: UIImageView, UIGestureRecognizerDelegate {
     var startTouch: CGPoint?
     var delegate: StickerDelegate?
     var button2: UIButton?
+    let animation = CAKeyframeAnimation(keyPath: "transform.translation.x")
+//    let animation = CAKeyframeAnimation(keyPath: "transform")
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -34,6 +37,7 @@ class Sticker: UIImageView, UIGestureRecognizerDelegate {
         //        self.clipsToBounds = true
         self.frame.origin = CGPoint(x: 50, y: 50)
         self.frame.size = CGSize(width: 100, height: 100)
+        
         
         let rotationRecognizer = UIRotationGestureRecognizer(target: self, action: #selector(didRotate))
         let pinchRecogizer = UIPinchGestureRecognizer(target: self, action: #selector(didPinch))
@@ -87,6 +91,45 @@ class Sticker: UIImageView, UIGestureRecognizerDelegate {
     //    }()
     
     
+    func randomInterval(_ interval: TimeInterval, variance: Double) -> TimeInterval {
+        return interval + variance * Double((Double(arc4random_uniform(1000)) - 500.0) / 500.0)
+    }
+    
+    func shake() {
+        guard layer.animation(forKey: "wiggle") == nil else { return }
+        guard layer.animation(forKey: "bounce") == nil else { return }
+        
+        let angle = 0.06
+        
+        let wiggle = CAKeyframeAnimation(keyPath: "transform.rotation.z")
+        wiggle.values = [-angle, angle]
+        wiggle.autoreverses = true
+        wiggle.duration = randomInterval(0.1, variance: 0.025)
+        wiggle.repeatCount = Float.infinity
+        layer.add(wiggle, forKey: "wiggle")
+        
+        let bounce = CAKeyframeAnimation(keyPath: "transform.translation.y")
+        bounce.values = [4.0, 0.0]
+        bounce.autoreverses = true
+        bounce.duration = randomInterval(0.12, variance: 0.025)
+        bounce.repeatCount = Float.infinity
+        layer.add(bounce, forKey: "bounce")
+    }
+    
+//    func shake2() {
+//
+//        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
+//        animation.duration = 0.6
+//        animation.repeatCount = 1000
+//        animation.autoreverses = true
+//        animation.values = [-15.0, 15.0, -15.0, 15.0, -10.0, 10.0, -5.0, 5.0, 0.0 ]
+//        layer.add(animation, forKey: "shake")
+//    }
+//
+    func stopShake() {
+       layer.removeAllAnimations()
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         startCenter = self.center
         if let viewWithTag = self.superview?.viewWithTag(23) {
@@ -100,11 +143,14 @@ class Sticker: UIImageView, UIGestureRecognizerDelegate {
             //            }
         }
         //        let button2 = UIButton(frame: CGRect(x: startCenter!.x + 100, y: startCenter!.y + 100, width: 100, height: 50))
-        button2 = UIButton(frame: CGRect(x: startCenter!.x + 50 , y: startCenter!.y + 50, width: 100, height: 50))
+        button2 = UIButton(frame: CGRect(x: startCenter!.x + 50 , y: startCenter!.y + 50, width: 30, height: 30))
+        self.applyRoundCorner(button2!)
+        self.shake()
+        
         //        button2 = UIButton(frame: CGRect(x: 0, y: 300, width: 100, height: 50))
         //        let button2 = DeleteButton(frame: CGRect(x: 100, y: 100, width: 100, height: 50))
         button2?.backgroundColor = .red
-        button2?.setTitle("Delete", for: .normal)
+        button2?.setTitle("X", for: .normal)
         button2?.tag = 23
         //        button2.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
         button2?.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
@@ -141,7 +187,11 @@ class Sticker: UIImageView, UIGestureRecognizerDelegate {
             button2?.center.y = (button2?.center.y)! + deltay
         }
     }
-    
+    func applyRoundCorner(_ object:AnyObject) {
+        
+        object.layer.cornerRadius = object.frame.size.width / 2
+        object.layer.masksToBounds = true
+    }
     @objc func didRotate(sender: UIRotationGestureRecognizer) {
         let rotation = sender.rotation
         self.transform = self.transform.rotated(by: rotation)
