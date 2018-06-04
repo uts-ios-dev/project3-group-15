@@ -23,6 +23,7 @@ class Sticker: UIImageView, UIGestureRecognizerDelegate {
     var loadedIntoView: Bool = false
     var startCenter: CGPoint?
     var startTouch: CGPoint?
+    // SAMANEH
     var delegate: StickerDelegate?
     var button2: UIButton?
     let animation = CAKeyframeAnimation(keyPath: "transform.translation.x")
@@ -36,7 +37,6 @@ class Sticker: UIImageView, UIGestureRecognizerDelegate {
         super.init(image: image)
         
         self.isUserInteractionEnabled = true
-        //        self.clipsToBounds = true
         self.frame.origin = CGPoint(x: 50, y: 50)
         self.frame.size = CGSize(width: 100, height: 100)
         
@@ -48,6 +48,7 @@ class Sticker: UIImageView, UIGestureRecognizerDelegate {
         
         self.addGestureRecognizer(rotationRecognizer)
         self.addGestureRecognizer(pinchRecogizer)
+        //SAMANEH
         //        self.isUserInteractionEnabled = true
         
         //        let buttonTest = DeleteButton(frame: CGRect(x: 100, y: 100, width: 100, height: 50))
@@ -60,6 +61,7 @@ class Sticker: UIImageView, UIGestureRecognizerDelegate {
         
     }
     
+    // SAMANEH press and hold function for delete
     //    @objc func longPress(sender: UILongPressGestureRecognizer) {
     //
     ////        if sender.state == .began { print("LongPress BEGAN detected") }
@@ -117,7 +119,7 @@ class Sticker: UIImageView, UIGestureRecognizerDelegate {
         bounce.repeatCount = Float.infinity
         layer.add(bounce, forKey: "bounce")
     }
-    
+//SAMANEH Other type of animation
 //    func shake2() {
 //
 //        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
@@ -137,45 +139,26 @@ class Sticker: UIImageView, UIGestureRecognizerDelegate {
         if let viewWithTag = self.superview?.viewWithTag(23) {
             viewWithTag.removeFromSuperview()
             delegate?.stopShakeAll()
-//            self.stopShake()
         }
+//SAMANEH
         for touch in touches {
             startTouch = touch.location(in: self.superview)
-            //            if let viewWithTag =  self.viewWithTag(23) {
-            //                print("self.viewWithTag(23) {")
-            //                //                        viewWithTag.removeFromSuperview()
-            //            }
         }
-        //        let button2 = UIButton(frame: CGRect(x: startCenter!.x + 100, y: startCenter!.y + 100, width: 100, height: 50))
+
         button2 = UIButton(frame: CGRect(x: startCenter!.x + 20 , y: startCenter!.y + 20, width: 25, height: 25))
         self.applyRoundCorner(button2!)
         self.shake()
-        
-        //        button2 = UIButton(frame: CGRect(x: 0, y: 300, width: 100, height: 50))
-        //        let button2 = DeleteButton(frame: CGRect(x: 100, y: 100, width: 100, height: 50))
         button2?.backgroundColor = UIColor.gray
         button2?.setTitle("X", for: .normal)
         button2?.tag = 23
-        //        button2.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
         button2?.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
         
         self.superview?.addSubview(button2!)
-        //        self.layer.zPosition = 1
-        //                self.addSubview(button2!)
         delegate?.selectedSticker(id: self.id)
         
     }
-    //    @objc func buttonAction(sender: UIButton!) {
-    //        print("Button tapped")
-    //
-    //        //        delegate?.deleteSticker()
-    //
-    //    }
-    
     @objc func buttonAction(sender: UIButton) {
         print("Button tapped")
-        //        guard let delegate = delegate else { return }
-        //        delegate.buttonTapped(button: sender)
         delegate?.deleteSticker()
     }
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {

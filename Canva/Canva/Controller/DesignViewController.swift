@@ -32,8 +32,6 @@ class DesignViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //        self.view.addSubview(sticker)
-        // Do any additional setup after loading the view, typically from a nib.
         
         let edgePan = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(screenEdgeSwiped))
         edgePan.edges = .left
@@ -46,8 +44,6 @@ class DesignViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     // SAMANEH START
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        //        print("super view touchesBegan", selectedStickerToDelete)
-        //
         if let viewWithTag = self.view.viewWithTag(23) {
             viewWithTag.removeFromSuperview()
             stopShakeAll()
@@ -110,7 +106,6 @@ class DesignViewController: UIViewController, UIImagePickerControllerDelegate, U
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let nav = segue.destination as? UISideMenuNavigationController, let galleryController = nav.topViewController as? GalleryController {
             galleryController.delegate = self
-            //            stick.delegate = self
         }
     }
     
