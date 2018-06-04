@@ -106,6 +106,16 @@ class DesignViewController: UIViewController, UIImagePickerControllerDelegate, U
         }
     }
     
+    @IBAction func buttonImportPhotoTapped(_ sender: Any) {
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = .photoLibrary;
+            imagePicker.allowsEditing = true
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+    }
+    
     @IBAction func buttonSaveToAlbumTouchDown(_ sender: Any) {
         self.generator.prepare()
     }

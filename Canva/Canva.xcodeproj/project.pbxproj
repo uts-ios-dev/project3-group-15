@@ -12,7 +12,6 @@
 		0100219B20B828500082B127 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0100219A20B8284F0082B127 /* Helper.swift */; };
 		0138845C20B9889D00F2F633 /* gallery.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0138845B20B9889D00F2F633 /* gallery.bundle */; };
 		013C5CD720A9429A00943E5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013C5CD620A9429A00943E5C /* AppDelegate.swift */; };
-		013C5CD920A9429A00943E5C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013C5CD820A9429A00943E5C /* MainViewController.swift */; };
 		013C5CDB20A9429A00943E5C /* DirectoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013C5CDA20A9429A00943E5C /* DirectoryViewController.swift */; };
 		013C5CDE20A9429A00943E5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 013C5CDC20A9429A00943E5C /* Main.storyboard */; };
 		013C5CE020A9429C00943E5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 013C5CDF20A9429C00943E5C /* Assets.xcassets */; };
@@ -30,7 +29,6 @@
 		0138845B20B9889D00F2F633 /* gallery.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = gallery.bundle; sourceTree = "<group>"; };
 		013C5CD320A9429A00943E5C /* Canva.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Canva.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		013C5CD620A9429A00943E5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		013C5CD820A9429A00943E5C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		013C5CDA20A9429A00943E5C /* DirectoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryViewController.swift; sourceTree = "<group>"; };
 		013C5CDD20A9429A00943E5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		013C5CDF20A9429C00943E5C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -90,7 +88,6 @@
 			children = (
 				013C5CD620A9429A00943E5C /* AppDelegate.swift */,
 				01C4D9BD20B28FB80052BF72 /* DesignViewController.swift */,
-				013C5CD820A9429A00943E5C /* MainViewController.swift */,
 				0100217220B7F5EB0082B127 /* GalleryController.swift */,
 				0100217420B7F7740082B127 /* GalleryCell.swift */,
 				013C5CDA20A9429A00943E5C /* DirectoryViewController.swift */,
@@ -263,7 +260,6 @@
 				018EA03F20B8395400EF00DB /* Global.swift in Sources */,
 				013C5CD720A9429A00943E5C /* AppDelegate.swift in Sources */,
 				0100217320B7F5EB0082B127 /* GalleryController.swift in Sources */,
-				013C5CD920A9429A00943E5C /* MainViewController.swift in Sources */,
 				01C4D9BE20B28FB80052BF72 /* DesignViewController.swift in Sources */,
 				01C4D9C020B2930F0052BF72 /* Sticker.swift in Sources */,
 				0100219B20B828500082B127 /* Helper.swift in Sources */,
