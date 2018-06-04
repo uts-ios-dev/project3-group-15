@@ -31,6 +31,16 @@ class DesignViewController: UIViewController, UIImagePickerControllerDelegate, U
         canvaView.backgroundColor = Global.Constants.canvaBackgroundColor
     }
     
+    // Orientation: http://swiftdeveloperblog.com/code-examples/disable-rotation-code-example-in-swift/
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+    }
+    override open var shouldAutorotate: Bool { // Extra
+        return false
+    }
+    
     // Orientation: https://stackoverflow.com/questions/28938660/how-to-lock-orientation-of-one-view-controller-to-portrait-mode-only-in-swift
     /* override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -43,12 +53,9 @@ class DesignViewController: UIViewController, UIImagePickerControllerDelegate, U
         super.viewWillDisappear(animated)
         
         // Don't forget to reset when view is being removed
-        AppUtility.lockOrientation(.all)
+        AppUtility.lockOrientation(.all) 
     } */
-    override open var shouldAutorotate: Bool { // Extra
-        return false
-    }
-    
+   
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
