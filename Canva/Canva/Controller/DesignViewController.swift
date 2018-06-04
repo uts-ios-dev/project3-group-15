@@ -12,7 +12,6 @@ import SideMenu
 class DesignViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, GalleryControllerDelegate {
     
     @IBOutlet weak var canvaView: UIView!
-    @IBOutlet weak var buttonSaveToAlbum: UIButton!
     @IBOutlet weak var canvaBackground: UIImageView!
     
     var stickers = [Sticker]()
