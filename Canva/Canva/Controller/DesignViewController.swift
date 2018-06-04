@@ -18,17 +18,6 @@ class DesignViewController: UIViewController, UIImagePickerControllerDelegate, U
     var generator = UINotificationFeedbackGenerator()
     var selectedStickerToDelete = ""
     
-    private lazy var sticker: Sticker = {
-        var filename = "003-tree.png"
-        let iv = Sticker(image: UIImage(named: "\(Global.Constants.galleryBundleName)/\(filename)"))
-        
-        iv.delegate = self
-        return iv
-    }()
-    
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -41,15 +30,13 @@ class DesignViewController: UIViewController, UIImagePickerControllerDelegate, U
         canvaView.backgroundColor = Global.Constants.canvaBackgroundColor
     }
     
-    // SAMANEH START
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let viewWithTag = self.view.viewWithTag(23) {
             viewWithTag.removeFromSuperview()
             stopShakeAll()
-            sticker.stopShake()
         }
     }
-    // SAMANEH END
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -67,7 +54,6 @@ class DesignViewController: UIViewController, UIImagePickerControllerDelegate, U
     func updateVisibleStickers(sticker: Sticker) {
         stickers.append(sticker)
         sticker.delegate = self
-        //        sticker.isUserInteractionEnabled = true
         for sticker in stickers {
             if (!sticker.loadedIntoView) {
                 self.canvaView.addSubview(sticker)
@@ -81,6 +67,7 @@ class DesignViewController: UIViewController, UIImagePickerControllerDelegate, U
             sticker.stopShake()
         }
     }
+    
     func selectedSticker(id: String) {
         selectedStickerToDelete = id
     }
@@ -91,6 +78,7 @@ class DesignViewController: UIViewController, UIImagePickerControllerDelegate, U
                 sticker.removeFromSuperview()
             }
         }
+        
         if let viewWithTag = self.view.viewWithTag(23) {
             viewWithTag.removeFromSuperview()
         }
@@ -149,14 +137,6 @@ class DesignViewController: UIViewController, UIImagePickerControllerDelegate, U
                 }()})
             present(alert, animated: true)
         }
-    }
-    // SAMANEH
-    @objc func buttonAction(sender: UIButton!) {
-        print("Button tapped")
-    }
-    
-    func showSubviewButtonTapped(sender: AnyObject) {
-        
     }
     
 }

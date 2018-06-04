@@ -12,8 +12,6 @@ protocol StickerDelegate {
     func selectedSticker(id: String)
     func deleteSticker()
     func stopShakeAll()
-    
-//    func buttonTapped(button: UIButton)
 }
 
 class Sticker: UIImageView, UIGestureRecognizerDelegate {
