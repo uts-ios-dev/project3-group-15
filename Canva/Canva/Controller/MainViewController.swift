@@ -35,6 +35,8 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
      */
     // >>>> MAGGIE END
     
+   
+    
     public var screenWidth: Double {
         return Double(UIScreen.main.bounds.width)
     }
@@ -42,10 +44,9 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         return Double(UIScreen.main.bounds.height)
     }
     
-   
-    override func viewDidLoad() {
-     
     
+    override func viewDidLoad() {
+ 
     }
     // >>>> SAMANEH END
     
