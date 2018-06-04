@@ -25,7 +25,7 @@ class Sticker: UIImageView, UIGestureRecognizerDelegate {
     var startTouch: CGPoint?
     // SAMANEH
     var delegate: StickerDelegate?
-    var button2: UIButton?
+    var closeIcon: UIButton?
     let animation = CAKeyframeAnimation(keyPath: "transform.translation.x")
 //    let animation = CAKeyframeAnimation(keyPath: "transform")
     
@@ -103,32 +103,38 @@ class Sticker: UIImageView, UIGestureRecognizerDelegate {
         guard layer.animation(forKey: "wiggle") == nil else { return }
         guard layer.animation(forKey: "bounce") == nil else { return }
         
-        let angle = 0.06
-        
-        let wiggle = CAKeyframeAnimation(keyPath: "transform.rotation.z")
-        wiggle.values = [-angle, angle]
-        wiggle.autoreverses = true
-        wiggle.duration = randomInterval(0.1, variance: 0.025)
-        wiggle.repeatCount = Float.infinity
-        layer.add(wiggle, forKey: "wiggle")
+//        let angle = 0.06
+//
+//        let wiggle = CAKeyframeAnimation(keyPath: "transform.rotation.z")
+//        wiggle.values = [-angle, angle]
+//        wiggle.autoreverses = true
+//        wiggle.duration = randomInterval(0.1, variance: 0.025)
+//        wiggle.repeatCount = Float.infinity
+//        layer.add(wiggle, forKey: "wiggle")
         
         let bounce = CAKeyframeAnimation(keyPath: "transform.translation.y")
-        bounce.values = [4.0, 0.0]
+        bounce.values = [8.0, 0.0]
         bounce.autoreverses = true
         bounce.duration = randomInterval(0.12, variance: 0.025)
         bounce.repeatCount = Float.infinity
         layer.add(bounce, forKey: "bounce")
     }
 //SAMANEH Other type of animation
-//    func shake2() {
-//
-//        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
-//        animation.duration = 0.6
-//        animation.repeatCount = 1000
-//        animation.autoreverses = true
-//        animation.values = [-15.0, 15.0, -15.0, 15.0, -10.0, 10.0, -5.0, 5.0, 0.0 ]
-//        layer.add(animation, forKey: "shake")
-//    }
+    func shake2() {
+
+        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
+        animation.duration = 0.6
+        animation.repeatCount = 1000
+        animation.autoreverses = true
+        animation.values = [-10.0, 10.0, -10.0, 10.0, -10.0, 10.0, -5.0, 5.0, 0.0 ]
+        layer.add(animation, forKey: "shake")
+        let bounce = CAKeyframeAnimation(keyPath: "transform.translation.y")
+        bounce.values = [2.0, 0.0]
+        bounce.autoreverses = true
+        bounce.duration = randomInterval(0.12, variance: 0.025)
+        bounce.repeatCount = Float.infinity
+        layer.add(bounce, forKey: "bounce")
+    }
 //
     func stopShake() {
        layer.removeAllAnimations()
@@ -145,15 +151,15 @@ class Sticker: UIImageView, UIGestureRecognizerDelegate {
             startTouch = touch.location(in: self.superview)
         }
 
-        button2 = UIButton(frame: CGRect(x: startCenter!.x + 20 , y: startCenter!.y + 20, width: 25, height: 25))
-        self.applyRoundCorner(button2!)
+        closeIcon = UIButton(frame: CGRect(x: startCenter!.x + 20 , y: startCenter!.y + 20, width: 25, height: 25))
+        self.applyRoundCorner(closeIcon!)
         self.shake()
-        button2?.backgroundColor = UIColor.gray
-        button2?.setTitle("X", for: .normal)
-        button2?.tag = 23
-        button2?.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+        closeIcon?.backgroundColor = UIColor.gray
+        closeIcon?.setTitle("X", for: .normal)
+        closeIcon?.tag = 23
+        closeIcon?.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
         
-        self.superview?.addSubview(button2!)
+        self.superview?.addSubview(closeIcon!)
         delegate?.selectedSticker(id: self.id)
         
     }
@@ -170,8 +176,11 @@ class Sticker: UIImageView, UIGestureRecognizerDelegate {
             self.center.y = startCenter!.y + loc.y - startTouch!.y
             deltax = self.center.x - deltax
             deltay = self.center.y - deltay
-            button2?.center.x = (button2?.center.x)! + deltax
-            button2?.center.y = (button2?.center.y)! + deltay
+            closeIcon?.center.x = (closeIcon?.center.x)! + deltax
+            closeIcon?.center.y = (closeIcon?.center.y)! + deltay
+            delegate?.stopShakeAll()
+            closeIcon?.isHidden = true
+            
         }
     }
     func applyRoundCorner(_ object:AnyObject) {
